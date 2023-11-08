@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://degabes84ttre"]
+
+[ext_resource type="Script" path="res://dokimion.gd" id="1_jnl17"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_jnl17")
+
+[node name="Slider" type="HSlider" parent="."]
+anchors_preset = -1
+anchor_right = 0.15
+offset_left = 184.0
+offset_top = 256.0
+offset_right = 288.0
+offset_bottom = 368.0
+max_value = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]

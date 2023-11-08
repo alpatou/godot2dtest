@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://degabes84ttre"]
+
+[ext_resource type="Script" path="res://dokimion.gd" id="1_jnl17"]
+[ext_resource type="Texture2D" uid="uid://deiakb0lkslow" path="res://icon.svg" id="2_dcoke"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_jnl17")
+
+[node name="Slider" type="HSlider" parent="."]
+anchors_preset = -1
+anchor_right = 0.15
+offset_left = 168.0
+offset_top = 256.0
+offset_right = 272.0
+offset_bottom = 368.0
+max_value = 2.0
+
+[node name="Player" type="AudioStreamPlayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 240.0
+offset_top = 88.0
+offset_right = 352.0
+offset_bottom = 224.0
+texture = ExtResource("2_dcoke")
+
+[connection signal="drag_ended" from="Slider" to="." method="_on_slider_drag_ended"]
+[connection signal="drag_started" from="Slider" to="." method="_on_slider_drag_started"]
+[connection signal="mouse_entered" from="Slider" to="." method="_on_slider_mouse_entered"]
+[connection signal="mouse_exited" from="Slider" to="." method="_on_slider_mouse_exited"]
+[connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]
